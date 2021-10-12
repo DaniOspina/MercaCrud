@@ -1,6 +1,5 @@
-import React, {Component} from "react";
-import axios from 'axios';
-import "./products.css";
+import React from "react";
+import "./user.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
     Table,
@@ -14,69 +13,78 @@ import {
 } from "reactstrap";
 import Footer from "../footer/Footer";
 
-/* const data = [
+const data = [
     {
-        "id": 1,
-        "pro_name": "JABON DETERGENTE LIQUIDO",
-        "pro_provider": "COCO VARELA",
-        "pro_existences": 16,
-        "pro_date": "2017-10-25",
-        "pro_description": "2 X 3 LITROS PARA PRENDAS DELICADAS Detergente desarrollado para el lavado de prendas delicadas",
-        "pro_category": "Elementos de Aseo"
-      },
-      {
-        "id": 2,
-        "pro_name": "Detergente polvo jabón rey",
-        "pro_provider": "Dersa",
-        "pro_existences": 5,
-        "pro_date": "2019-03-15",
-        "pro_description": "Disfruta del mejor aroma del Detergente Dersa polvo bicarbonato + jabon rey x 6000g",
-        "pro_category": "Elementos de Aseo"
-      },
-      {
-        "id": 3,
-        "pro_name": "Jabon liquido vainilla coco",
-        "pro_provider": "Bacterion",
-        "pro_existences": 15,
-        "pro_date": "2019-10-20",
-        "pro_description": "Lleva tu Jabon liquido Bacterion vainilla coco x1000 ml y protegete de las bacterias durante el dia",
-        "pro_category": "Elementos de Aseo"
-      }
-]; */
+        id: 1,
+        Producto: "sachichas",
+        Provedor: "ranchera",
+        Cantidad: "23",
+        Fecha: "10/06/2021",
+        Descripcion: "comida embutida ",
+        Categoria: "embutido",
+    },
+    {
+        id: 2,
+        Producto: "chorizo",
+        Provedor: "ranchera",
+        Cantidad: "23",
+        Fecha: "10/06/2021",
+        Descripcion: "comida embutida ",
+        Categoria: "embutido",
+    },
+    {
+        id: 3,
+        Producto: "hamburguesa",
+        Provedor: "ranchera",
+        Cantidad: "23",
+        Fecha: "10/06/2021",
+        Descripcion: "comida embutida ",
+        Categoria: "embutido",
+    },
+    {
+        id: 4,
+        Producto: "mortadela",
+        Provedor: "ranchera",
+        Cantidad: "23",
+        Fecha: "10/06/2021",
+        Descripcion: "comida embutida ",
+        Categoria: "embutido",
+    },
+    {
+        id: 5,
+        Producto: "jamon",
+        Cantidad: "23",
+        Provedor: "ranchera",
+        Fecha: "10/06/2021",
+        Descripcion: "comida embutida ",
+        Categoria: "embutido",
+    },
+    {
+        id: 6,
+        Producto: "jamon",
+        Provedor: "ranchera",
+        Cantidad: "23",
+        Fecha: "10/06/2021",
+        Descripcion: "comida embutida ",
+        Categoria: "embutido!",
+    },
+];
 
-
-class Products extends Component {
-   state = {
-        data: [],
-        status: false,
+class User extends React.Component {
+    state = {
+        data: data,
         modalActualizar: false,
         modalInsertar: false,
         form: {
             id: "",
-            pro_name: "",
-            pro_provider: "",
-            pro_existences: "",
-            pro_date: "",
-            pro_description: "",
-            pro_category: "",
+            Producto: "",
+            Provedor: "",
+            Fecha: "",
+            Cantidad: "",
+            Descripcion: "",
+            Categoria: "",
         },
     };
-    
-
-    getProducts = () => {
-        var url = 'http://apimercatodo.herokuapp.com/api';
-        var request ="";
-        axios.get(url + request).then(res => {
-            this.setState({
-                data: res.data
-                , status: true
-            });
-        });
-    }
-
-    componentDidMount =() => {
-        this.getProducts();
-    }
 
     mostrarModalActualizar = (dato) => {
         this.setState({
@@ -104,12 +112,12 @@ class Products extends Component {
         var arreglo = this.state.data;
         arreglo.map((registro) => {
             if (dato.id == registro.id) {
-                arreglo[contador].pro_name = dato.pro_name;
-                arreglo[contador].pro_provider = dato.pro_provider;
-                arreglo[contador].pro_existences = dato.pro_existences;
-                arreglo[contador].pro_date = dato.pro_date;
-                arreglo[contador].pro_description = dato.pro_description;
-                arreglo[contador].pro_category = dato.pro_category;
+                arreglo[contador].Producto = dato.Producto;
+                arreglo[contador].Provedor = dato.Provedor;
+                arreglo[contador].Cantidad = dato.Cantidad;
+                arreglo[contador].Fecha = dato.Fecha;
+                arreglo[contador].Descripcion = dato.Descripcion;
+                arreglo[contador].Categoria = dato.Categoria;
             }
             contador++;
         });
@@ -155,18 +163,14 @@ class Products extends Component {
             <>
                 <header>
                     <h1>Mercatodo</h1>
+
                 </header>
                 <div className="all">
                     <Container>
                         <div className="buscador">
                             <br />
                             <p>Bienvenido Beto encuentra lo que necesitas</p>
-                            <Button
-                                color="success"
-                                onClick={() => this.mostrarModalInsertar()}
-                            >
-                                +Agregar producto
-                            </Button>
+                            
                             <input className="Search" type="search"></input>
                         </div>
 
@@ -181,8 +185,6 @@ class Products extends Component {
                                     <th>Fecha</th>
                                     <th>Descripcion</th>
                                     <th>Catergoria</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
 
@@ -190,34 +192,13 @@ class Products extends Component {
                                 {this.state.data.map((dato) => (
                                     <tr key={dato.id}>
                                         <td>{dato.id}</td>
-                                        <td>{dato.pro_name}</td>
-                                        <td>{dato.pro_provider}</td>
-                                        <td>{dato.pro_existences}</td>
-                                        <td>{dato.pro_date}</td>
-                                        <td>{dato.pro_description}</td>
-                                        <td>{dato.pro_category}</td>
-                                        <td>
-                                            <Button
-                                                color="primary"
-                                                onClick={() =>
-                                                    this.mostrarModalActualizar(
-                                                        dato
-                                                    )
-                                                }
-                                            >
-                                                Editar
-                                            </Button>{" "}
-                                        </td>
-                                        <td>
-                                            <Button
-                                                color="danger"
-                                                onClick={() =>
-                                                    this.eliminar(dato)
-                                                }
-                                            >
-                                                Eliminar
-                                            </Button>
-                                        </td>
+                                        <td>{dato.Producto}</td>
+                                        <td>{dato.Provedor}</td>
+                                        <td>{dato.Cantidad}</td>
+                                        <td>{dato.Fecha}</td>
+                                        <td>{dato.Descripcion}</td>
+                                        <td>{dato.Categoria}</td>
+                                        
                                     </tr>
                                 ))}
                             </tbody>
@@ -403,9 +384,9 @@ class Products extends Component {
                             </Button>
                         </ModalFooter>
                     </Modal>
-                </div>  
+                </div>
             </>
         );
     }
 }
-export default Products;
+export default User;
