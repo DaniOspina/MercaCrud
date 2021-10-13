@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/css/main.70841151.chunk.css",
+    "main.js": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/main.8798dd57.chunk.js",
+    "main.js.map": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/main.8798dd57.chunk.js.map",
+    "runtime-main.js": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/runtime-main.a75be62f.js",
+    "runtime-main.js.map": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/runtime-main.a75be62f.js.map",
+    "static/css/2.0f1110e3.chunk.css": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/css/2.0f1110e3.chunk.css",
+    "static/js/2.377a1b29.chunk.js": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/2.377a1b29.chunk.js",
+    "static/js/2.377a1b29.chunk.js.map": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/2.377a1b29.chunk.js.map",
+    "index.html": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/index.html",
+    "static/css/2.0f1110e3.chunk.css.map": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/css/2.0f1110e3.chunk.css.map",
+    "static/css/main.70841151.chunk.css.map": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/css/main.70841151.chunk.css.map",
+    "static/js/2.377a1b29.chunk.js.LICENSE.txt": "/DaniOspina/MercaCrud/tree/main/crud-mercatodo/static/js/2.377a1b29.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a75be62f.js",
+    "static/css/2.0f1110e3.chunk.css",
+    "static/js/2.377a1b29.chunk.js",
+    "static/css/main.70841151.chunk.css",
+    "static/js/main.8798dd57.chunk.js"
+  ]
+}
