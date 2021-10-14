@@ -1,9 +1,9 @@
 import React, {Component}from 'react';
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+/* import axios from 'axios';
 import md5 from 'md5';
-import Cookies from 'universal-cookie';
+import Cookies from 'universal-cookie'; */
 import NavBar from '../../components/navbar/NavBar';
 import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
