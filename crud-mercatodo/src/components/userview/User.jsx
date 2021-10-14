@@ -4,7 +4,6 @@ import "../../components/products/products.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
     Table,
-    Button,
     Container,
     
 } from "reactstrap";
