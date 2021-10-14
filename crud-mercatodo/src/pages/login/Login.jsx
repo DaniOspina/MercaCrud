@@ -96,6 +96,9 @@ class Login extends Component {
                 <Link to ='/admin'>
                 <button className="btn btn-warning">Iniciar Sesión</button>
                 </Link>
+                <Link to ='/user'>
+                <button className="btn btn-warning">Empleados</button>
+                </Link>
             </div>
             </div>
         </div>
