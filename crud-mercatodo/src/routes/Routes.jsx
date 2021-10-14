@@ -8,9 +8,9 @@ const Routes = () => {
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-            <Route exact path="/" component={Login}/>
-            <Route exact path="/admin" component={Admin}/>
-            <Route exact path="/user" component={props => <User {...props}/>}/>
+            <Route exact path="/" > <Login/> </Route>
+            <Route exact path="/" > <Admin/> </Route>
+            <Route exact path="/" > <User/> </Route>
         </Switch>
         </BrowserRouter>
     )
