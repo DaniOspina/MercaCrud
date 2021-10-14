@@ -17,11 +17,11 @@ class Admin extends Component {
     }
     
     //si no existe username redirecciona a login
-    componentDidMount() {
+    /* componentDidMount() {
         if(!cookies.get('username')){
             window.location.href="./";
         }
-    }
+    } */
 
     render() {
         console.log('id: '+ cookies.get('id'));

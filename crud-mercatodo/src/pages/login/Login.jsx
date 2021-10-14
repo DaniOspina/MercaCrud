@@ -6,8 +6,9 @@ import md5 from 'md5';
 import Cookies from 'universal-cookie';
 import NavBar from '../../components/navbar/NavBar';
 import Footer from '../../components/footer/Footer';
+import { Link } from 'react-router-dom';
 
-//url para petición
+/* //url para petición
 const baseUrl="http://localhost:3001/usuarios";
 
 //guardar la var inicio de sesión
@@ -64,8 +65,9 @@ class Login extends Component {
         if(cookies.get('username')){
             window.location.href="./admin";
         }
-    }
+    } */
     
+    class Login extends Component {
     render() {
         return (
     <div className="master">
@@ -79,7 +81,7 @@ class Login extends Component {
                 type="text"
                 className="form-control"
                 name="username"
-                onChange={this.handleChange}
+                // onChange={this.handleChange}
                 />
                 <br />
                 <label>Contraseña: </label>
@@ -88,10 +90,12 @@ class Login extends Component {
                 type="password"
                 className="form-control"
                 name="password"
-                onChange={this.handleChange}
+                // onChange={this.handleChange}
                 />
                 <br />
-                <button className="btn btn-warning" onClick={()=> this.logIn()}>Iniciar Sesión</button>
+                <Link to ='/admin'>
+                <button className="btn btn-warning">Iniciar Sesión</button>
+                </Link>
             </div>
             </div>
         </div>
